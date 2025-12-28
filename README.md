@@ -1,5 +1,7 @@
 # Tarpaulin- A Course Management Tool
-Tarpaulin is a RESTful API for a fake course management tool called Tarpaulin. It has a number of functions that allow for manipulating users and their courses.
+Tarpaulin is a RESTful API for a fake course management tool called Tarpaulin. It has a number of functions that allow for manipulating user accounts and their courses. This README includes a detailed list of each endpoint included in the API.
+
+*As this course management tool has been made for demonstration purposes, all users have been generated ahead of time. Their usernames and password are listed within the **User Login** endpoint.*
 
 ## Endpoints
 ### User Login
@@ -33,6 +35,22 @@ JSON format
 	"password": "{{password}}"
 }
 ```
+
+**List of all pre-generated usernames:**  
+<ul>
+	<li>admin1@osu.com</li>
+	<li>instructor1@osu.com</li>
+	<li>instructor2@osu.com</li>
+	<li>student1@osu.com</li>
+	<li>student2@osu.com</li>
+	<li>student3@osu.com</li>
+	<li>student4@osu.com</li>
+	<li>student5@osu.com</li>
+	<li>student6@osu.com</li>
+</ul>
+
+*Every user shares the same password: **Tarp1234!*** 
+
 **Responses**  
 <table>
 	<tr>
