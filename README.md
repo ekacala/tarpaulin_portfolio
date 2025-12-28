@@ -9,6 +9,7 @@ Generates a JWT for a registered user of the app by sending a request to an Auth
 ```
 POST https://ekacala-tarpaulin-portfolio.uc.r.appspot.com/users/login
 ```
+
 **Request Body**  
 JSON format
 <table>
@@ -80,6 +81,13 @@ Returns an array with all 9 pre-created users from the kind "users" in Datastore
 ```
 GET https://ekacala-tarpaulin-portfolio.uc.r.appspot.com/users
 ```
+
+**Protection**  
+Only users with the role *admin*
+
+**Header**  
+The JWT as a Bearer token in the Authorization header
+
 **Responses**  
 <table>
 	<tr>
@@ -109,6 +117,10 @@ Returns the details of one user.
 ```
 GET https://ekacala-tarpaulin-portfolio.uc.r.appspot.com/users/:user_id
 ```
+
+**Header**  
+The JWT as a Bearer token in the Authorization header
+
 **Responses**  
 <table>
 	<tr>
@@ -138,7 +150,14 @@ Uploads a .png in the request as the user's avatar to Google Cloud Storage. If t
 ```
 POST https://ekacala-tarpaulin-portfolio.uc.r.appspot.com/users/:user_id/avatar
 ```
-**Request Body**
+
+**Protection**  
+JWT is owned by user_id in the path parameter
+
+**Header**  
+The JWT as a Bearer token in the Authorization header
+
+**Request Body**  
 Form-data with one required key file in .png format
 
 **Responses**  
@@ -176,6 +195,12 @@ Return the file stored in Google Cloud Storage as the user's avatar.
 GET https://ekacala-tarpaulin-portfolio.uc.r.appspot.com/users/:user_id/avatar
 ```
 
+**Protection**  
+JWT is owned by user_id in the path parameter
+
+**Header**  
+The JWT as a Bearer token in the Authorization header
+
 **Responses**  
 <table>
 	<tr>
@@ -212,6 +237,12 @@ Delete the file stored in Google Cloud Storage as the user's avatar.
 DELETE https://ekacala-tarpaulin-portfolio.uc.r.appspot.com/users/:user_id/avatar
 ```
 
+**Protection**  
+JWT is owned by user_id in the path parameter
+
+**Header**  
+The JWT as a Bearer token in the Authorization header
+
 **Responses**  
 <table>
 	<tr>
@@ -247,6 +278,13 @@ Create a course.
 ```
 POST https://ekacala-tarpaulin-portfolio.uc.r.appspot.com/courses
 ```
+
+**Protection**  
+Only users with the role *admin*
+
+**Header**  
+The JWT as a Bearer token in the Authorization header
+
 **Request Body**  
 JSON format
 <table>
@@ -374,6 +412,12 @@ Performs a partial update on the course.
 PATCH https://ekacala-tarpaulin-portfolio.uc.r.appspot.com/courses/:course_id
 ```
 
+**Protection**  
+Only users with the role *admin*
+
+**Header**  
+The JWT as a Bearer token in the Authorization header
+
 **Request Body**  
 JSON format
 <table>
@@ -450,6 +494,12 @@ Deletes a course.
 DELETE https://ekacala-tarpaulin-portfolio.uc.r.appspot.com/courses/:course_id
 ```
 
+**Protection**  
+Only users with the role *admin*
+
+**Header**  
+The JWT as a Bearer token in the Authorization header
+
 **Responses**  
 <table>
 	<tr>
@@ -479,6 +529,13 @@ Enroll and/or disenroll students from a course.
 ```
 PATCH https://ekacala-tarpaulin-portfolio.uc.r.appspot.com/courses/:course_id/students
 ```
+
+**Protection**  
+Uer with admin role or when JWT is owned by the instructor of this course
+
+**Header**  
+The JWT as a Bearer token in the Authorization header
+
 **Request Body**  
 JSON format
 <table>
@@ -540,6 +597,12 @@ Get the list of students enrolled in a course.
 ```
 GET https://ekacala-tarpaulin-portfolio.uc.r.appspot.com/courses/:course_id/students
 ```
+
+**Protection**  
+User with admin role or when JWT is owned by the instructor of this course
+
+**Header**  
+The JWT as a Bearer token in the Authorization header
 
 **Responses**  
 <table>
