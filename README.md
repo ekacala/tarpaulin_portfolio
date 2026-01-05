@@ -1,7 +1,22 @@
 # Tarpaulin- A Course Management Tool
 Tarpaulin is a RESTful API for a fake course management tool called Tarpaulin. It has a number of functions that allow for manipulating user accounts and their courses. This README includes a detailed list of each endpoint included in the API.
 
-*As this course management tool has been made for demonstration purposes, all users have been generated ahead of time. Their usernames and password are listed within the **User Login** endpoint.*
+*As this course management tool has been made for demonstration purposes, all users have been generated ahead of time. Their usernames and password are listed within the **User Login** endpoint.*  
+
+## Postman Collection
+Within the Postman folder in this repository, I have included a Postman collection and environment file containing requests to the API. Currently it contains tests for about half of the endpoints with more planned in the future.  
+### How to Use
+<ol>
+	<li>Download both the environment and collection files from the postman file folder within this repository.</li>
+	<li>Create an account and download <a href="https://www.postman.com">Postman</a></li>
+	<li>Within the Postman desktop version, click *file*, *import*, and then drag and drop the Tarpaulin Collection file. Repeat for the Tarpaulin Environment file.</li>
+	<li>Go to the *Collections* page. In the top right corner click the dropdown box to select an environment. Choose Tarpaulin.</li>
+	<li>Within the list of Collections, click the dropdown for Tarpaulin, then click on the *create avatar* folder.</li>
+	<li>Select *create/update avatar student1 200* and then select *body*. Select the value student1.png and upload a new file from local machine. Ensure the file uploaded is a .png file. Select that file once uploaded.</li>
+	<li>Within the create avatar folder select *update avatar student1 200* and again select *body*. Repeat file upload from last step but with a new .png file.</li>
+	<li>Within the list of collections, hover over the Tarpaulin collection and click on the three dots to view more actions, then select *Run*.</li>
+	<li>Click *Run Tarpaulin* to run all tests within this collection! If setup correctly all tests should pass.</li>
+</ol> 
 
 ## Endpoints
 ### User Login
