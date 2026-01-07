@@ -9,7 +9,7 @@ Within the Postman folder in this repository, I have included a Postman collecti
 <ol>
 	<li>Download both the environment and collection files from the postman file folder within this repository.</li>
 	<li>Create an account and download <a href="https://www.postman.com">Postman</a></li>
-	<li>Within the Postman desktop version, click file, import, and then drag and drop the Tarpaulin Collection file. Repeat for the Tarpaulin Environment file.</li>
+	<li>Within the Postman desktop version, click file, import, and then drag and drop the Tarpaulin.postman_collection.json file. Repeat for the Tarpaulin.postman_environment.json file.</li>
 	<li>Go to the Collections page. In the top right corner click the dropdown box to select an environment. Choose Tarpaulin.</li>
 	<li>Within the list of Collections, click the dropdown for Tarpaulin, then click on the create avatar folder.</li>
 	<li>Select create/update avatar student1 200 and then select body. Select the value student1.png and upload a new file from local machine. Ensure the file uploaded is a .png file. Select that file once uploaded.</li>
