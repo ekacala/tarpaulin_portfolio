@@ -1,0 +1,4327 @@
+{
+	"info": {
+		"_postman_id": "d64c0d6d-36f0-4798-9984-d3117256ff65",
+		"name": "Tarpaulin",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49092154"
+	},
+	"item": [
+		{
+			"name": "user login",
+			"item": [
+				{
+					"name": "admin1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.environment.set(\"admin1_jwt\", respJSON[\"token\"]);\r",
+									"pm.environment.set(\"admin1_sub\", get_sub(respJSON[\"token\"])) \r",
+									"\r",
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{admin1_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "instructor1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.environment.set(\"instructor1_jwt\", respJSON[\"token\"]);\r",
+									"pm.environment.set(\"instructor1_sub\", get_sub(respJSON[\"token\"]))\r",
+									"\r",
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{instructor1_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "instructor2 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.environment.set(\"instructor2_jwt\", respJSON[\"token\"]);\r",
+									"pm.environment.set(\"instructor2_sub\", get_sub(respJSON[\"token\"]))\r",
+									"\r",
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{instructor2_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.environment.set(\"student1_jwt\", respJSON[\"token\"]);\r",
+									"pm.environment.set(\"student1_sub\", get_sub(respJSON[\"token\"]))\r",
+									"\r",
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student1_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student2 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.environment.set(\"student2_jwt\", respJSON[\"token\"]);\r",
+									"pm.environment.set(\"student2_sub\", get_sub(respJSON[\"token\"]))\r",
+									"\r",
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student2_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student3 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.environment.set(\"student3_jwt\", respJSON[\"token\"]);\r",
+									"pm.environment.set(\"student3_sub\", get_sub(respJSON[\"token\"]))\r",
+									"\r",
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student3_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student4 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.environment.set(\"student4_jwt\", respJSON[\"token\"]);\r",
+									"pm.environment.set(\"student4_sub\", get_sub(respJSON[\"token\"]))\r",
+									"\r",
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student4_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student5 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.environment.set(\"student5_jwt\", respJSON[\"token\"]);\r",
+									"pm.environment.set(\"student5_sub\", get_sub(respJSON[\"token\"]))\r",
+									"\r",
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student5_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student6 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.environment.set(\"student6_jwt\", respJSON[\"token\"]);\r",
+									"pm.environment.set(\"student6_sub\", get_sub(respJSON[\"token\"]))\r",
+									"\r",
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    pm.expect(respJSON).to.have.property(\"token\");           \r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student6_username}}\",\r\n\t\"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invalid body 400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.test(\"400 status code\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"400 error message\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"The request body is invalid\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{student6_username}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invalid credentials 401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.test(\"401 status code\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"401 error message\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"Unauthorized\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n\t\"username\": \"{{invalid_username}}\",\r\n    \"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/users/login",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "all users",
+			"item": [
+				{
+					"name": "all users 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Each has 3 properties\", function(){\r",
+									"    pm.expect(respJSON.filter(x => Object.keys(x).length === 3).length).to.equal(9);\r",
+									"    pm.expect(respJSON.filter(x => Object.keys(x).includes('id')).length).to.equal(9);\r",
+									"    pm.expect(respJSON.filter(x => Object.keys(x).includes('role')).length).to.equal(9);\r",
+									"    pm.expect(respJSON.filter(x => Object.keys(x).includes('sub')).length).to.equal(9);\r",
+									"})\r",
+									"\r",
+									"const admin = respJSON.filter((x) => x.role === 'admin')[0];\r",
+									"pm.test(\"sub value of admin in database matches sub in jwt\", function() {\r",
+									"    pm.expect(admin.sub).to.equal(pm.environment.get('admin1_sub'));\r",
+									"    pm.environment.set(\"admin1_id\", admin.id);\r",
+									"})\r",
+									"\r",
+									"const instructors = respJSON.filter((x) => x.role === 'instructor');\r",
+									"pm.test(\"sub values of instructors in database matches sub in jwts\", function() {\r",
+									"    pm.expect(instructors.length).to.equal(2);\r",
+									"    for(let i = 1; i <= 2; i++){\r",
+									"        const instructor_i = instructors.filter(x => x.sub === pm.environment.get('instructor' + i + '_sub'))[0];\r",
+									"        pm.expect(instructor_i.sub).to.equal(pm.environment.get('instructor' + i + '_sub'));\r",
+									"        pm.environment.set('instructor' + i + '_id', instructor_i.id);\r",
+									"    } \r",
+									"})\r",
+									"\r",
+									"const students = respJSON.filter((x) => x.role === 'student');\r",
+									"pm.test(\"sub values of students in database matches sub in jwts\", function() {\r",
+									"    pm.expect(students.length).to.equal(6);\r",
+									"    for(let i = 1; i <= 6; i++){\r",
+									"        const student_i = students.filter(x => x.sub === pm.environment.get('student' + i + '_sub'))[0];\r",
+									"        pm.expect(student_i.sub).to.equal(pm.environment.get('student' + i + '_sub'));\r",
+									"        pm.environment.set('student' + i + '_id', student_i.id);\r",
+									"    }  \r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all users 401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.test(\"401 status code\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"401 error message\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"Unauthorized\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_password}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all users 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const respJSON = pm.response.json()\r",
+									"\r",
+									"pm.test(\"403 status code\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"403 error message\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"You don't have permission on this resource\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{instructor2_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get a user",
+			"item": [
+				{
+					"name": "get admin1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"admin user has either 3 or 4 properties\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(Object.keys(respJSON).length).to.be.within(3,4);\r",
+									"    pm.expect(respJSON['id']).to.equal(pm.environment.get('admin1_id'));\r",
+									"    pm.expect(respJSON['sub']).to.equal(pm.environment.get('admin1_sub'));\r",
+									"    pm.expect(respJSON['role']).to.equal('admin');\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{admin1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{admin1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get instructor1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"an instructor has either 4 or 5 properties\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(Object.keys(respJSON).length).to.be.within(4,5)\r",
+									"    pm.expect(respJSON['id']).to.equal(pm.environment.get('instructor1_id'));\r",
+									"    pm.expect(respJSON['sub']).to.equal(pm.environment.get('instructor1_sub'));\r",
+									"    pm.expect(respJSON['role']).to.equal('instructor');\r",
+									"    pm.expect(Object.keys(respJSON).includes('courses')).to.be.true;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{instructor1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{instructor1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{instructor1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get student1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"a student has either 4 or 5 properties\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(Object.keys(respJSON).length).to.be.within(4,5)\r",
+									"    pm.expect(respJSON['id']).to.equal(pm.environment.get('student1_id'));\r",
+									"    pm.expect(respJSON['sub']).to.equal(pm.environment.get('student1_sub'));\r",
+									"    pm.expect(respJSON['role']).to.equal('student');\r",
+									"    pm.expect(Object.keys(respJSON).includes('courses')).to.be.true;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a user 401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"401 status code\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"401 error message\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"Unauthorized\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a user 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"403 status code\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"403 error message\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"You don't have permission on this resource\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student2_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "create avatar",
+			"item": [
+				{
+					"name": "create/update avatar student1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"the response has the avatar_url\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['avatar_url']).to.equal(\r",
+									"        pm.environment.get('app_url') + '/users/' + \r",
+									"        pm.environment.get('student1_id') + '/avatar')\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1f0d1564-9a26-4ee0-bd11-b7c734cb6598"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student1 has avatar_url 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"student1 has an avatar URL\", function(){\r",
+									"    const respJSON = pm.response.json();    \r",
+									"    pm.expect(respJSON['avatar_url']).to.equal(\r",
+									"        pm.environment.get('app_url') + '/users/' + \r",
+									"        pm.environment.get('student1_id') + '/avatar');\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update avatar student1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"the response has the avatar_url\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['avatar_url']).to.equal(\r",
+									"        pm.environment.get('app_url') + '/users/' + \r",
+									"        pm.environment.get('student1_id') + '/avatar')\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1f0d1590-3b25-4a00-b3d2-f4f40c972bab"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post avatar 400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"400 status code\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON[\"Error\"]).to.equal(\"The request body is invalid\")\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file_name",
+									"type": "file",
+									"src": "/C:/Users/nauman/Documents/GitHub/cs493_redev/code/a6-portfolio/files/student1.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post avatar 401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"401 status code\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON[\"Error\"]).to.equal(\"Unauthorized\")\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1f0d14f2-93dc-4160-822e-a567abac2234"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post avatar 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"403 status code\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['Error']).to.equal(\"You don't have permission on this resource\")\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "postman-cloud:///1f0d14f2-93dc-4160-822e-a567abac2234"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get user's avatar",
+			"item": [
+				{
+					"name": "get avatar 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get avatar 401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"401 status code\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON[\"Error\"]).to.equal(\"Unauthorized\")\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get avatar 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"403 status code\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['Error']).to.equal(\"You don't have permission on this resource\")\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get avatar 404",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"404 status code\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['Error']).to.equal(\"Not found\")\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{instructor2_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{instructor2_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{instructor2_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "delete avatar",
+			"item": [
+				{
+					"name": "delete avatar 401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"401 status code\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON[\"Error\"]).to.equal(\"Unauthorized\")\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete avatar 204",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"204 status code\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student1 no avatar_url 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"student1 no longer has an avatar URL\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).includes('avatar_url')).to.be.false;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete avatar 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"403 status code\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['Error']).to.equal(\"You don't have permission on this resource\")\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete avatar 404",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"404 status code\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['Error']).to.equal(\"Not found\")\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}/avatar",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}",
+								"avatar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "create a course",
+			"item": [
+				{
+					"name": "create 1st course",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"course1_id\", pm.response.json()[\"id\"]);\r",
+									"\r",
+									"pm.test(\"status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"CS\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(493);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Cloud Application Development\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor1_id'));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"CS\",\r\n  \"number\": 493,\r\n  \"title\": \"Cloud Application Development\",\r\n  \"term\": \"fall-24\",\r\n  \"instructor_id\": {{instructor1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create course 400 missing prop",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"400 status code\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"400 error message\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"The request body is invalid\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The response content type is application.json\", function(){\r",
+									"    pm.expect(pm.response.contentInfo().contentType).to.eq('application/json');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"CS\",\r\n  \"number\": 493,\r\n  \"title\": \"Cloud Application Development\",\r\n  \"instructor_id\": {{instructor1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create course 400 invalid instructor",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"400 status code\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"400 error message\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"The request body is invalid\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The response content type is application.json\", function(){\r",
+									"    pm.expect(pm.response.contentInfo().contentType).to.eq('application/json');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"CS\",\r\n  \"number\": 493,\r\n  \"title\": \"Cloud Application Development\",\r\n  \"term\": \"fall-24\",\r\n  \"instructor_id\": {{student1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create course 401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"401 status code\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"401 error message\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"Unauthorized\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"CS\",\r\n  \"number\": 493,\r\n  \"title\": \"Cloud Application Development\",\r\n  \"instructor_id\": {{instructor1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create course 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"403 status code\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"403 error message\", function () {\r",
+									"     pm.expect(pm.response.json()[\"Error\"]).to.eq(\"You don't have permission on this resource\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{instructor1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"CS\",\r\n  \"number\": 493,\r\n  \"title\": \"Cloud Application Development\",\r\n  \"term\": \"fall-24\",\r\n  \"instructor_id\": {{instructor1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 2nd course",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"course2_id\", pm.response.json()[\"id\"]);\r",
+									"\r",
+									"pm.test(\"status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"CS\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(492);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Mobile App Development\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor1_id'));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"CS\",\r\n  \"number\": 492,\r\n  \"title\": \"Mobile App Development\",\r\n  \"term\": \"fall-24\",\r\n  \"instructor_id\": {{instructor1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 3rd course",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"course3_id\", pm.response.json()[\"id\"]);\r",
+									"\r",
+									"pm.test(\"status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"ECE\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(271);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Digital Logic Design\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor1_id'));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"ECE\",\r\n  \"number\": 271,\r\n  \"title\": \"Digital Logic Design\",\r\n  \"term\": \"fall-24\",\r\n  \"instructor_id\": {{instructor1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create 4th course",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"course4_id\", pm.response.json()[\"id\"]);\r",
+									"\r",
+									"pm.test(\"status code is 201\", function () {\r",
+									"    pm.response.to.have.status(201);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"AI\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(534);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Machine Learning\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor2_id'));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"subject\": \"AI\",\r\n  \"number\": 534,\r\n  \"title\": \"Machine Learning\",\r\n  \"term\": \"fall-24\",\r\n  \"instructor_id\": {{instructor2_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get all courses",
+			"item": [
+				{
+					"name": "get courses 1st page",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"The response content type is application.json\", function(){\r",
+									"    pm.expect(pm.response.contentInfo().contentType).to.eq('application/json');\r",
+									"});\r",
+									"\r",
+									"const respJSON = pm.response.json();\r",
+									"\r",
+									"pm.test(\"Exactly 3 courses on the page\", function(){\r",
+									"   pm.expect(respJSON['courses'].length).to.eq(3);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Every course has all the required properties\", function(){\r",
+									"    const courses = respJSON['courses'];\r",
+									"    for (const course of courses){\r",
+									"        pm.expect(course).to.have.property(\"id\");\r",
+									"        pm.expect(course).to.have.property(\"subject\");\r",
+									"        pm.expect(course).to.have.property(\"number\");        \r",
+									"        pm.expect(course).to.have.property(\"title\");\r",
+									"        pm.expect(course).to.have.property(\"term\");\r",
+									"        pm.expect(course).to.have.property(\"instructor_id\");\r",
+									"        pm.expect(course[\"self\"]).to.eq(\r",
+									"            pm.environment.get(\"app_url\") + '/courses/' + course[\"id\"]);\r",
+									"    }\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The next link is correct\", function(){\r",
+									"    pm.expect(respJSON['next']).to.be.oneOf([\r",
+									"            pm.environment.get(\"app_url\") + '/courses?offset=3&limit=3',\r",
+									"            pm.environment.get(\"app_url\") + '/courses?limit=3&offset=3']);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The courses are sorted by subject\", function(){\r",
+									"    const courses = respJSON['courses'];\r",
+									"    const subjects = courses.map(x => x['subject']);\r",
+									"    console.log(subjects)\r",
+									"    let isSorted = true;\r",
+									"    for(let i = 0; i < subjects.length -1; i++){\r",
+									"        if(subjects[i] > subjects[i+1]){\r",
+									"            isSorted = false;\r",
+									"            break;\r",
+									"        }\r",
+									"    }\r",
+									"    pm.expect(isSorted).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get courses 2nd page",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The response content type is application.json\", function(){\r",
+									"    pm.expect(pm.response.contentInfo().contentType).to.eq('application/json');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"At least 1 course on the page\", function(){\r",
+									"   pm.expect(pm.response.json()['courses'].length).to.be.at.least(1);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Every course has all the required properties\", function(){\r",
+									"    const courses = pm.response.json()['courses'];\r",
+									"    for (const course of courses){\r",
+									"        pm.expect(course).to.have.property(\"id\");\r",
+									"        pm.expect(course).to.have.property(\"subject\");\r",
+									"        pm.expect(course).to.have.property(\"number\");        \r",
+									"        pm.expect(course).to.have.property(\"title\");\r",
+									"        pm.expect(course).to.have.property(\"term\");\r",
+									"        pm.expect(course).to.have.property(\"instructor_id\");\r",
+									"        pm.expect(course[\"self\"]).to.eq(\r",
+									"            pm.environment.get(\"app_url\") + '/courses/' + course[\"id\"]);\r",
+									"    }\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses?offset=3&limit=3",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses"
+							],
+							"query": [
+								{
+									"key": "offset",
+									"value": "3"
+								},
+								{
+									"key": "limit",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get a course",
+			"item": [
+				{
+					"name": "get course 1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"CS\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(493);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Cloud Application Development\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor1_id'));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"The response content type is application.json\", function(){\r",
+									"    pm.expect(pm.response.contentInfo().contentType).to.eq('application/json');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get course 2 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"content is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"CS\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(492);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Mobile App Development\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor1_id'));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course2_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course2_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get course 3 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"content is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"ECE\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(271);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Digital Logic Design\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor1_id'));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course3_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course3_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get course 4 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"content is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"AI\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(534);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Machine Learning\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor2_id'));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course4_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course4_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get a course 404",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"Error\"]).to.eq(\"Not found\");\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{invalid_course_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{invalid_course_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "edit a course",
+			"item": [
+				{
+					"name": "edit course 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"content is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(pm.response.json()[\"subject\"]).to.eq(\"CS\");\r",
+									"    pm.expect(pm.response.json()[\"number\"]).to.eq(493);\r",
+									"    pm.expect(pm.response.json()[\"title\"]).to.eq(\"Cloud Application Development\");\r",
+									"    pm.expect(pm.response.json()[\"term\"]).to.eq(\"fall-24\");\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor2_id'));\r",
+									"});\r",
+									"\r",
+									"pm.test(\"self URL is valid\", function () {\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(respJSON[\"self\"]).to.eq(\r",
+									"        pm.environment.get(\"app_url\") + '/courses/' + respJSON[\"id\"]);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"instructor_id\": {{instructor2_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get instructor2 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"an instructor has either 4 or 5 properties\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(Object.keys(respJSON).length).to.be.within(4,5)\r",
+									"    pm.expect(respJSON['id']).to.equal(pm.environment.get('instructor2_id'));\r",
+									"    pm.expect(respJSON['sub']).to.equal(pm.environment.get('instructor2_sub'));\r",
+									"    pm.expect(respJSON['role']).to.equal('instructor');\r",
+									"    pm.expect(Object.keys(respJSON).includes('courses')).to.be.true;\r",
+									"});\r",
+									"\r",
+									"pm.test(\"instructor has course1 in courses array\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(respJSON['courses'].includes(pm.environment.get('app_url') + '/courses/' + pm.environment.get('course1_id'))).to.be.true;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{instructor2_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{instructor2_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{instructor2_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get course1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"course instructor_id = instructor2_id\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(pm.response.json()[\"instructor_id\"]).to.eq(pm.environment.get('instructor2_id'));\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit course 400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON[\"Error\"]).to.equal(\"The request body is invalid\")\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"instructor_id\": {{admin1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit course 401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON[\"Error\"]).to.equal(\"Unauthorized\")\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"instructor_id\": {{admin1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/1",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit course 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"error message is correct\", function(){\r",
+									"    const respJSON = pm.response.json();\r",
+									"    pm.expect(Object.keys(respJSON).length).to.equal(1);\r",
+									"    pm.expect(respJSON['Error']).to.equal(\"You don't have permission on this resource\")\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"instructor_id\": {{admin1_id}}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "update course enrollment",
+			"item": [
+				{
+					"name": "enroll students 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"add\": [{{student1_id}}, {{student2_id}}, {{student3_id}}, {{student4_id}}, {{student5_id}}],\r\n    \"remove\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get student1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"student has course1 in courses array\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(respJSON['courses'].includes(pm.environment.get('app_url') + '/courses/' + pm.environment.get('course1_id'))).to.be.true;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get student5 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"student has course1 in courses array\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(respJSON['courses'].includes(pm.environment.get('app_url') + '/courses/' + pm.environment.get('course1_id'))).to.be.true;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student5_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student5_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student5_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "enroll and remove students 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"add\": [{{student6_id}}],\r\n    \"remove\": [{{student5_id}}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get student5 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"student does not have course1 in courses array\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(respJSON['courses'].includes(pm.environment.get('app_url') + '/courses/' + pm.environment.get('course1_id'))).to.be.false;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student5_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student5_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student5_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get student6 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"student has course1 in courses array\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(respJSON['courses'].includes(pm.environment.get('app_url') + '/courses/' + pm.environment.get('course1_id'))).to.be.true;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student6_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student6_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student6_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invalid jwt 401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"add\": [{{student1_id}}],\r\n    \"remove\": [{{student1_id}}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/1/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"1",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invalid course 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"add\": [{{student1_id}}],\r\n    \"remove\": [{{student1_id}}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/1/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"1",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "student user 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"add\": [{{student1_id}}],\r\n    \"remove\": [{{student1_id}}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "wrong teacher 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{instructor1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"add\": [{{student1_id}}],\r\n    \"remove\": [{{student1_id}}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "duplicate student 409",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 409\", function () {\r",
+									"    pm.response.to.have.status(409);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"add\": [{{student5_id}}],\r\n    \"remove\": [{{student5_id}}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "non-student 409",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 409\", function () {\r",
+									"    pm.response.to.have.status(409);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"add\": [{{admin1_id}}],\r\n    \"remove\": [1]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "no remove array 409",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 409\", function () {\r",
+									"    pm.response.to.have.status(409);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"add\": [{{student1_id}}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}",
+								"students"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get course enrollment",
+			"item": [
+				{
+					"name": "get course1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"course has students 1, 2, 3, 4, and 6 in students array\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(respJSON.includes(pm.environment.get('student1_id'))).to.be.true;\r",
+									"    pm.expect(respJSON.includes(pm.environment.get('student2_id'))).to.be.true;\r",
+									"    pm.expect(respJSON.includes(pm.environment.get('student3_id'))).to.be.true;\r",
+									"    pm.expect(respJSON.includes(pm.environment.get('student4_id'))).to.be.true;\r",
+									"    pm.expect(respJSON.includes(pm.environment.get('student6_id'))).to.be.true;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invalid jwt 401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/1/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"1",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "invalid course 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/1/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"1",
+								"students"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "wrong jwt 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course2_id}}/students",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course2_id}}",
+								"students"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "delete a course",
+			"item": [
+				{
+					"name": "delete course1 204",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get instructor2 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"instructor does not have course1 in courses array\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(respJSON['courses'].includes(pm.environment.get('app_url') + '/courses/' + pm.environment.get('course1_id'))).to.be.false;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{instructor2_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{instructor2_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{instructor2_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get student1 200",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"200 status code\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"student does not have course1 in courses array\", function(){\r",
+									"    const respJSON = pm.response.json()\r",
+									"    pm.expect(respJSON['courses'].includes(pm.environment.get('app_url') + '/courses/' + pm.environment.get('course1_id'))).to.be.false;\r",
+									"})"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{student1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/users/{{student1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"users",
+								"{{student1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get course1 404",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a course 401",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 401\", function () {\r",
+									"    pm.response.to.have.status(401);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{invalid_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course1_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course1_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete a course 403",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 403\", function () {\r",
+									"    pm.response.to.have.status(403);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{instructor1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course2_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course2_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete course2 204",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course2_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course2_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete course3 204",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course3_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course3_id}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete course4 204",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"status code is 204\", function () {\r",
+									"    pm.response.to.have.status(204);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{admin1_jwt}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{app_url}}/courses/{{course4_id}}",
+							"host": [
+								"{{app_url}}"
+							],
+							"path": [
+								"courses",
+								"{{course4_id}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					"Object.prototype.get_sub = (jwt) => JSON.parse((Buffer.from(jwt.split('.')[1], 'base64').toString('ascii'))).sub;"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
